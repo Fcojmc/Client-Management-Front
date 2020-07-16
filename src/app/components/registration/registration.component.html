@@ -1,0 +1,35 @@
+<div class="row" style="margin-top: 40px;">
+  <form  #user="ngForm" (ngSubmit)="onSubmit(user)" class="col s8 offset-s2 card hoverable">
+    <div class="row">
+      <span class="card-title col s12 center-align">Register</span>
+    </div>
+    <div class="row">
+      <div class="input-field col s8 offset-s2">
+        <input type="text" class="validate " name = "nomUser" #nomUser = "ngModel" [(ngModel)] = "newUser.nomUser" required>
+        <label for="last_name" >Last Name</label>
+      </div>
+    </div>  
+    <div class="row">
+      <div class="input-field col s8 offset-s2">
+        <input type="text" class="validate" name = "prenomUser" #prenomUser = "ngModel" [(ngModel)] = "newUser.prenomUser" required>
+        <label for="first_name">First Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8 offset-s2">
+        <input type="email" class="validate" name = "emailUser" #emailUser ="ngModel" [(ngModel)] = "newUser.emailUser" required>
+        <label for="email">Email</label>
+        <small class="red-text">{{errorMessage}}</small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8 offset-s2">
+        <input type="password" class="validate" name = "passwordUser" #passwordUser = "ngModel" [(ngModel)] = "newUser.passwordUser" required>
+        <label for="password">Password</label>
+      </div>
+    </div>
+    <div class="row">
+      <button type = "submit" class="waves-effect waves-light btn col s2 offset-s5">Submit</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,75 @@
+<div class="row" style="margin-top: 40px;" *ngIf = "isLogged; else notLogged">
+  <form  #client="ngForm" (ngSubmit)="onSubmit(client)" class="col s8 offset-s2 card hoverable">
+    <div class="row">
+      <span class="card-title col s12 center-align">Add Client</span>
+    </div>
+    <div class="row">
+      <div class="input-field col s8 offset-s2">
+        <input type="text" class="validate " name = "nomClient" #nomClient = "ngModel" [(ngModel)] = "newClient.nomClient" required>
+        <label for="last_name" >Last Name</label>
+      </div>
+    </div>  
+    <div class="row">
+      <div class="input-field col s8 offset-s2">
+        <input type="text" class="validate" name = "prenomClient" #prenomUser = "ngModel" [(ngModel)] = "newClient.prenomClient" required>
+        <label for="first_name">First Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8 offset-s2">
+        <input type="text" class="validate" name = "adresseClient" #adresseClient = "ngModel" [(ngModel)] = "newClient.adresseClient" required>
+        <label for="client_address">Client Address</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8 offset-s2">
+        <input type="text" class="validate" name = "codePostalClient" #codePostalClient = "ngModel" [(ngModel)] = "newClient.codePostalClient" required>
+        <label for="code_postal">Postal Code</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8 offset-s2">
+        <input type="email" class="validate" name = "emailClient" #emailClient ="ngModel" [(ngModel)] = "newClient.emailClient" required>
+        <label for="email">Email</label>
+        <!--<small class="red-text">{{errorMessage}}</small>-->
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8 offset-s2">
+        <input type="text" class="validate" name = "villeClient" #villeClient = "ngModel" [(ngModel)] = "newClient.villeClient" required>
+        <label for="ville_client">City</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8 offset-s2">
+        <input type="text" class="validate" name = "telephone1Client" #telephone1Client = "ngModel" [(ngModel)] = "newClient.telephone1Client" required>
+        <label for="telephone1_client">Telephone 1</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8 offset-s2">
+        <input type="text" class="validate" name = "telephone2Client" #telephone2Client = "ngModel" [(ngModel)] = "newClient.telephone2Client">
+        <label for="telephone2_client">Telephone 2</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8 offset-s2">
+        <input disabled value="This function will be available soon" id="disabled" type="text" class="validate">
+        <label for="disabled">Photo</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="center-align">
+        <button class="waves-effect waves-light btn" style="margin-right: 5px;" [routerLink] = "['/home']">Back</button>
+        <button type = "submit" class="waves-effect waves-light btn" style="margin-left: 5px;">Submit</button>
+      </div> 
+    </div>
+  </form>
+</div>
+
+<ng-template #notLogged>
+  <div class="row">
+    <h2 class="center-align">Login to be able to view this page</h2>
+    <button class="waves-effect waves-light btn col s2 offset-s5"  [routerLink] = "['/login']">Login</button>
+  </div>
+</ng-template>
